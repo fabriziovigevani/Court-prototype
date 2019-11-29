@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@aragon/ui'
+import { Button, textStyle, GU } from '@aragon/ui'
 
 import DAIIcon from '../assets/dai.svg'
 import ANTIcon from '../assets/ant.svg'
@@ -13,11 +13,21 @@ function Balances() {
       <div
         css={`
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         `}
       >
         <div>
-          <h4>Wallet balance</h4>
+          <span
+            css={`
+              ${textStyle('body3')}
+              color: #637381;
+              font-weight: 200;
+              display: inline-block;
+              margin-bottom: ${1.5 * GU}px;
+            `}
+          >
+            Wallet balance
+          </span>
           <Balance
             symbol="DAI"
             amount="3.304,76"
@@ -32,27 +42,75 @@ function Balances() {
           />
         </div>
         <div>
-          <h4>Staked balance</h4>
+          <span
+            css={`
+              ${textStyle('body3')}
+              color: #637381;
+              font-weight: 200;
+              display: inline-block;
+              margin-bottom: ${1.5 * GU}px;
+            `}
+          >
+            Staked balance
+          </span>
           <Balance
             symbol="ANJ"
             amount="3.304,76"
             value="3.300"
             iconSrc={ANJIcon}
           />
-          <Button>Unstake</Button>
+          <Button color="#636971">
+            {' '}
+            <span
+              css={`
+                color: #636971;
+              `}
+            >
+              Unstake
+            </span>
+          </Button>
         </div>
         <div>
-          <h4>Active balance</h4>
+          <span
+            css={`
+              ${textStyle('body3')}
+              color: #637381;
+              font-weight: 200;
+              display: inline-block;
+              margin-bottom: ${1.5 * GU}px;
+            `}
+          >
+            Active balance
+          </span>
           <Balance
             symbol="ANJ"
             amount="3.304,76"
             value="3.300"
             iconSrc={ANJIcon}
           />
-          <Button>Deactivate</Button>
+          <Button color="#636971">
+            {' '}
+            <span
+              css={`
+                color: #636971;
+              `}
+            >
+              Deactivate
+            </span>
+          </Button>
         </div>
         <div>
-          <h4>Rewards</h4>
+          <span
+            css={`
+              ${textStyle('body3')}
+              color: #637381;
+              font-weight: 200;
+              display: inline-block;
+              margin-bottom: ${1.5 * GU}px;
+            `}
+          >
+            Rewards
+          </span>
           <Balance
             symbol="DAI"
             amount="3.304,76"

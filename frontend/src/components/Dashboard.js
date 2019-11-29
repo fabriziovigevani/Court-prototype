@@ -5,7 +5,7 @@ import ProfileHeader from './ProfileHeader'
 function Dashboard() {
   return (
     <div>
-      <ProfileHeader />
+      <ProfileHeader active />
     </div>
   )
 }
