@@ -15,12 +15,11 @@ const launchesQuery = gql`
 `
 
 function Launches() {
-
   const [offset, setOffset] = useState(0)
 
   const [result] = useQuery({
     query: launchesQuery,
-    variables: { offset }
+    variables: { offset },
   })
 
   console.log(result)
@@ -34,10 +33,13 @@ function Launches() {
   return (
     <div className>
       <h1>Launches</h1>
-      <div className='launches'>
-        {result.data.launches.map((launch) => {
+      <div className="launches">
+        {result.data.launches.map(launch => {
           return (
-            <div key={launch.flight_number} className={`launch ${launch.launch_success ? 'success' : 'fail'}`}>
+            <div
+              key={launch.flight_number}
+              className={`launch ${launch.launch_success ? 'success' : 'fail'}`}
+            >
               <h4>{launch.mission_name}</h4>
               <p>{launch.launch_year}</p>
             </div>
@@ -45,12 +47,13 @@ function Launches() {
         })}
       </div>
       <div style={{ display: 'flex', marginTop: '20px' }}>
-        <button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 1))}>
+        <button
+          disabled={offset === 0}
+          onClick={() => setOffset(Math.max(0, offset - 1))}
+        >
           Previous
         </button>
-        <button onClick={() => setOffset(offset + 1)}>
-          Next
-        </button>
+        <button onClick={() => setOffset(offset + 1)}>Next</button>
       </div>
     </div>
   )

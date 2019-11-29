@@ -18,6 +18,13 @@ const Tasks = () => {
         }
       />
       <TaskBox />
+      <div
+        css={`
+          width: 100px;
+          height: 100px;
+          background: red;
+        `}
+      />
     </>
   )
 }
