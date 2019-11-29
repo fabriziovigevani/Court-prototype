@@ -1,14 +1,14 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import { Main } from '@aragon/ui'
 
-import Launches from './components/Launches'
+import Dashboard from './components/Dashboard'
 
 function App() {
   return (
-    <div className="App">
-      <Launches/>
-    </div>
-  );
+    <Main>
+      <Dashboard />
+    </Main>
+  )
 }
 
-export default App;
+export default App
