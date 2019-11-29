@@ -4,14 +4,14 @@
       "@babel/preset-env",
       {
         "modules": false,
-        "useBuiltIns": false
+        "useBuiltIns": "entry",
+        "corejs": 3
       }
     ],
     "@babel/preset-react"
   ],
   "plugins": [
     ["styled-components", { "displayName": true }],
-    "@babel/plugin-transform-runtime",
     "@babel/plugin-proposal-class-properties"
   ],
   "env": {
@@ -20,6 +20,7 @@
         [
           "@babel/preset-env",
           {
+            "modules": "commonjs",
             "targets": { "node": "current" }
           }
         ]

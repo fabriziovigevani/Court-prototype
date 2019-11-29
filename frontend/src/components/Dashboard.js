@@ -5,11 +5,9 @@ import ProfileHeader from './ProfileHeader'
 function Dashboard() {
   return (
     <div>
-      <ProfileHeader/>
+      <ProfileHeader />
     </div>
   )
 }
-
-
 
 export default Dashboard
